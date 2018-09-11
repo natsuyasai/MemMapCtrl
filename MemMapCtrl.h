@@ -4,8 +4,8 @@
 * @author
 */
 
-#ifndef MemMapCtrl_H
-#define MemMapCtrl_H
+#ifndef MEM_MAP_CTRL_H
+#define MEM_MAP_CTRL_H
 
 #include <stdint.h>
 
@@ -119,5 +119,5 @@ private:
 	void createMaskData(unsigned char[4], const BitInf&);
 };
 
-#endif // TSDATAIO_H
+#endif // MEM_MAP_CTRL_H
 // EOF

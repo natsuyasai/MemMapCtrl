@@ -263,36 +263,22 @@ GetMapReslt MemMapCtrl::getMapedAddr(int mem_device, uint32_t addr, uint32_t siz
 }
 
 
-//--------------------------------------------------------------------
-//    メソッド名 : getOffsetMapedAdder
-//      日本語名 :
-//        概  要 : 指定アドレスに対応したマッピング領域アドレスを取得する
-//    パラメータ : [IN] addr : 取得したいアドレス
-//      復帰情報 : マッピング領域アドレス
-//        備  考 : なし
-//      更新履歴 :
-//        日  付   内  容
-//    2018/mm/dd   新規作成
-//--------------------------------------------------------------------
+/// <summary>
+/// 指定アドレスに対応したマッピング領域アドレスを取得する
+/// </summary>
+/// <param name="addr">対象アドレス</param>
+/// <returns></returns>
 char* MemMapCtrl::getOffsetMapedAdder(unsigned int addr)
 {
     return (char*)(mMemMappedRegionP + (addr - mMemMapBaseAddr));
 }
 
 
-
-//--------------------------------------------------------------------
-//    メソッド名 : createMaskData
-//      日本語名 : マスクデータ生成
-//        概  要 : 書込み時のマスクデータを生成する。
-//    パラメータ : [OUT]  maskData  マスクデータ
-//               : [IN ] bitInf    マスク用のbit情報
-//      復帰情報 :
-//        備  考 : なし
-//      更新履歴 :
-//        日  付   内  容
-//    2018/mm/dd   新規作成
-//--------------------------------------------------------------------
+/// <summary>
+/// マスクデータ生成
+/// </summary>
+/// <param name="maskData">マスクデータ</param>
+/// <param name="bitInf">書き込み対象bit情報</param>
 void MemMapCtrl::createMaskData(unsigned char maskData[4], const  BitInf& bitInf)
 {
     // 各bitを反転させ、書込み対象bit以外を1としたマスクデータを生成する
